@@ -18,25 +18,27 @@
                     <div class="form-group row">
                         <label class="col-md-2">氏名</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="name" value="{{ old('title') }}">
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label class="col-md-2">性別</label>
+                       <label class="col-md-2">性別</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="gender" rows="20">{{ old('body') }}</textarea>
+                            {{-- 変更完了まで残す<input type="text" class="form-control" name="gender" value="{{ old('gender') }}"> --}}
+                            <p><input type="radio" name="gender" value="男"> 男</p>
+                            <p><input type="radio" name="gender" value="女"> 女</p>
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2">趣味</label>
                         <div class="col-md-10">
-                            <input type="file" class="form-control-file" name="hobby">
+                            <textarea class="form-control" name="hobby" rows="5">{{ old('hobby') }}</textarea>
                         </div>
                     </div>
                      <div class="form-group row">
                         <label class="col-md-2">自己紹介欄</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" name="introduction" rows="20">{{ old('body') }}</textarea>
+                            <textarea class="form-control" name="introduction" rows="20">{{ old('introduction') }}</textarea>
                         </div>
                     </div>
                     {{ csrf_field() }}
