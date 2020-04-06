@@ -15,7 +15,7 @@
                     <div class="form-group row">
                         <label class="col-md-2">氏名</label>
                         <div class="col-md-8">
-                            <input type="text" class="form-control" name="cond_name" value={{ $cond_name }}>\
+                            <input type="text" class="form-control" name="cond_name" value={{ $cond_name }}>
                         </div>
                         <div class="col-md-2">
                             {{ csrf_field() }}
@@ -31,18 +31,22 @@
                     <table class="table table-dark">
                         <thead>
                             <tr>
+                                <th width="5%">id</th>
                                 <th width="10%">名前</th>
-                                <th width="20%">性別</th>
-                                <th width="50%">趣味</th>
-                                <th width="10%">自己紹介欄</th>
+                                <th width="10%">性別</th>
+                                <th width="15%">趣味</th>
+                                <th width="50%">自己紹介欄</th>
+                                <th width="10%"> </th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($posts as $news)
+                            @foreach($profile_form as $profile)
                                 <tr>
-                                    <th>{{ $news->id }}</th>
-                                    <td>{{ str_limit($profile->title, 100) }}</td>
-                                    <td>{{ str_limit($profile->body, 250) }}</td>
+                                    <th>{{ $profile->id }}</th>
+                                    <th>{{ $profile->name }}</th>
+                                    <td>{{ $profile->gender }}</td>
+                                    <td>{{ $profile->hobby }}</td>
+                                    <td>{{ $profile->introduction }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\ProfileController@edit', ['id' => $profile->id]) }}">編集</a>

@@ -45,7 +45,7 @@ class ProfileController extends Controller
          // Validationをかける
       $this->validate($request, Profile::$rules);
       // Profile Modelからデータを取得する
-      $profole = Profile::find($request->id);
+      $profile = Profile::find($request->id);
       // 送信されてきたフォームデータを格納する
       $profile_form = $request->all();
       unset($profile_form['_token']);
@@ -56,14 +56,14 @@ class ProfileController extends Controller
 
 public function index(Request $request)
   {
-      $cond_title = $request->cond_title;
-      if ($cond_title != '') {
+      $cond_name = $request->cond_name;
+      if ($cond_name != '') {
           // 検索されたら検索結果を取得する
-          $posts = Profile::where('title', $cond_title)->get();
+          $posts = Profile::where('name', $cond_name)->get();
       } else {
           // それ以外はすべてのプロフィールを取得する
           $posts = Profile::all();
       }
-      return view('admin.profile.index', ['posts' => $posts, 'cond_title' => $cond_title]);
+      return view('admin.profile.index', ['profile_form' => $posts, 'cond_name' => $cond_name]);
   }
 }
