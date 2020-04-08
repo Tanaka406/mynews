@@ -35,7 +35,7 @@
                                 <th width="10%">名前</th>
                                 <th width="10%">性別</th>
                                 <th width="15%">趣味</th>
-                                <th width="50%">自己紹介欄</th>
+                                <th width="50%">学習目標</th></th>
                                 <th width="10%"> </th>
                             </tr>
                         </thead>
@@ -46,7 +46,7 @@
                                     <th>{{ $profile->name }}</th>
                                     <td>{{ $profile->gender }}</td>
                                     <td>{{ $profile->hobby }}</td>
-                                    <td>{{ $profile->introduction }}</td>
+                                    <td>{{ $profile->learning objective }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\ProfileController@edit', ['id' => $profile->id]) }}">編集</a>
