@@ -46,7 +46,7 @@
                                     <th>{{ $profile->name }}</th>
                                     <td>{{ $profile->gender }}</td>
                                     <td>{{ $profile->hobby }}</td>
-                                    <td>{{ $profile->learning objective }}</td>
+                                    <td>{{ $profile->learningplan }}</td>
                                     <td>
                                         <div>
                                             <a href="{{ action('Admin\ProfileController@edit', ['id' => $profile->id]) }}">編集</a>
